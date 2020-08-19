@@ -34,7 +34,6 @@ function fish_prompt
     set arrow ''
   end
 
-  set -l time $red(date '+%I:%M')$normal
   set -l cwd $cyan(basename (prompt_pwd))$normal
 
   if [ (_git_branch_name) ]
@@ -54,6 +53,6 @@ function fish_prompt
     end
   end
 
-  echo -n -s $failed $arrow $time ' ' $cwd $git_info $normal ' '
+  echo -n -s $failed $arrow ' ' $cwd $git_info $normal ' '
 
 end
