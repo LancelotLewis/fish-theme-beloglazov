@@ -53,6 +53,6 @@ function fish_prompt
     end
   end
 
-  echo -n -s $failed $arrow ' ' $cwd $git_info $normal ' '
+  echo -n -s $failed $arrow '' $cwd $git_info $normal ' '
 
 end
