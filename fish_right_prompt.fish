@@ -3,6 +3,5 @@ function fish_right_prompt
   set -l duration "$CMD_DURATION$cmd_duration"
   echo -sn (echo "$duration" | humanize_duration)" "
   
-  date "+%H:%M:%S"
-  set_color normal
+  echo (date "+%H:%M:%S")
 end
