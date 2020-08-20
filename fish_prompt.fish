@@ -24,14 +24,10 @@ function fish_prompt
   set -l blue (set_color -o blue)
   set -l normal (set_color normal)
 
-  if [ $last_status != 0 ]
-    set failed "$brightred✘$normal "
-  end
-
-  if [ 'root' = (whoami) ]
-    set arrow "$brightred➜$normal  "
+  if test $last_status = 0
+      set arrow "$green➜ "
   else
-    set arrow ''
+      set arrow "$red➜ "
   end
 
   set -l cwd $cyan(basename (prompt_pwd))$normal
@@ -53,6 +49,6 @@ function fish_prompt
     end
   end
 
-  echo -n -s $failed $arrow '' $cwd $git_info $normal ' '
+  echo -n -s $arrow ' ' $cwd $git_info $normal ' '
 
 end
